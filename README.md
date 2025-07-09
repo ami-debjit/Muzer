@@ -84,6 +84,7 @@
    cd ws 
    pnpm postinstall
    ```
+   for redis in cmd run redis-server.exe
 
 8. Run the following command to start the application:
    ```bash

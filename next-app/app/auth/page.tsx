@@ -16,7 +16,7 @@ export default function AuthPage({
   const router = useRouter();
 
   if (session.status === "authenticated") {
-    return router.push("/");
+    return router.push("/home");
   }
   return <AuthScreen authType={formType} />;
 }
