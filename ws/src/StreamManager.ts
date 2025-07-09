@@ -18,8 +18,11 @@ const connection = {
   port: parseInt(process.env.REDIS_PORT || "") || 6379,
 };
 
+// const redisCredentials = {
+//   url: `redis://${connection.username}:${connection.password}@${connection.host}:${connection.port}`,
+// };
 const redisCredentials = {
-  url: `redis://${connection.username}:${connection.password}@${connection.host}:${connection.port}`,
+  url: process.env.REDIS_URL || "",
 };
 
 export class RoomManager {

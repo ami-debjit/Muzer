@@ -5,6 +5,11 @@ import dotenv from "dotenv";
 import jwt from "jsonwebtoken";
 import { sendError } from "./utils";
 // import os from "os";
+import { Redis } from "ioredis";
+
+const redis = new Redis(process.env.REDIS_URL as string);
+export default redis;
+
 
 import { RoomManager } from "./StreamManager";
 
@@ -158,3 +163,4 @@ async function main() {
     console.log(`${process.pid}: WebSocket server is running on ${PORT}`);
   });
 }
+
