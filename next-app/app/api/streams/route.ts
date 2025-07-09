@@ -14,7 +14,7 @@ const CreateStreamSchema = z.object({
   spaceId:z.string()
 });
 
-const MAX_QUEUE_LEN = 20;
+const MAX_QUEUE_LEN = 20
 
 export async function POST(req: NextRequest) {
   try {

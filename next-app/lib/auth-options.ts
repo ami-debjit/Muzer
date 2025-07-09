@@ -98,10 +98,12 @@ export const authOptions = {
   },
   callbacks: {
     async jwt({ token, account, profile }) {
-      if (account && profile) {
-        token.email = profile.email as string;
-        token.id = account.access_token;
-      }
+      if (account) {
+    token.accessToken = account.id_token || account.access_token;
+  }
+  if (profile?.email) {
+    token.email = profile.email;
+  }
       return token;
     },
     async session({ session, token }: {
